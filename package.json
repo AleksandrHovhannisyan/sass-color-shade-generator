@@ -1,6 +1,6 @@
 {
   "name": "sass-color-shade-generator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A function to generate shades of a color in Sass.",
   "main": "generateShades.scss",
   "keywords": [
