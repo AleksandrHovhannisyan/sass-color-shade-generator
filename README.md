@@ -18,6 +18,8 @@ Import the function into any Sass file:
 @import "../node_modules/sass-color-shade-generator/generateShades";
 ```
 
+> Note: You may need to adjust the relative path accordingly depending on where your partial is located relative to your project root.
+
 And use it like so:
 
 ```scss
