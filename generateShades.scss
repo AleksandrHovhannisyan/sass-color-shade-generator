@@ -1,0 +1,33 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:math";
+
+/// Given a color and a flag denoting the lightness mode, returns n shades of lighter or darker colors from that starting color.
+/// @param {Color} color The color from which to generate all other shades. This is the value of the color corresponding to step-name in your scale.
+/// @param {Number} n The number of shades to generate (excluding the color itself). Defaults to 1. Must be positive.
+/// @param {'darker' | 'lighter'} type Whether to generate darker (default) or lighter colors.
+@function generate-shades($color, $n: 1, $type: "darker") {
+  @if $n <= 0 {
+    @error "Cannot generate #{$n} shades of #{$color}. At least 1 shade must be requested.";
+  }
+
+  $shades: ();
+  $lightness-increment: math.div(1, $n) * 100%;
+  $lightness-sign: null;
+
+  @if $type == "darker" {
+    $lightness-sign: -1;
+  } @else if $type == "lighter" {
+    $lightness-sign: 1;
+  } @else {
+    @error "Expect argument 'type' to be either 'lighter' or 'darker' but instead got #{$type}";
+  }
+
+  @for $i from 1 through $n {
+    $target-lightness: $lightness-sign * $lightness-increment * $i;
+    $shade: color.scale($color, $lightness: $target-lightness);
+    $shades: list.append($shades, $shade);
+  }
+
+  @return $shades;
+}

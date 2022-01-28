@@ -3,9 +3,26 @@
   "version": "0.0.1",
   "description": "A function to generate shades of a color in Sass.",
   "main": "generateShades.scss",
+  "keywords": [
+    "sass",
+    "color",
+    "shade",
+    "generator",
+    "shade calculator"
+  ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "AleksandrHovhannisyan",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.49.0"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "sass-true": "^6.0.1",
+    "stylelint": "^14.3.0",
+    "stylelint-config-standard-scss": "^3.0.0"
+  }
 }
