@@ -2,6 +2,7 @@
   "name": "sass-color-shade-generator",
   "version": "1.0.0",
   "description": "A function to generate shades of a color in Sass.",
+  "repository": "git@github.com:AleksandrHovhannisyan/sass-color-shade-generator.git",
   "main": "generateShades.scss",
   "keywords": [
     "sass",
